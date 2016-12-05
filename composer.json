@@ -25,7 +25,7 @@
         }
     ],
     "require": {
-        "medz/composer-vendor-install-folders"
+        "medz/composer-vendor-install-folders": "^1.0"
     },
     "support": {
         "email": "support@zhishisoft.com",
