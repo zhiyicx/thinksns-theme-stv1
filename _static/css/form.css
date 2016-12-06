@@ -200,7 +200,7 @@ transition: background .2s ease-in;
 .form-set dd .form-tt{float:left;display:block;width:120px;height:30px;line-height:30px;text-align:right;margin-right:20px;}
 .form-set dd .form-row{line-height:30px;float:left;margin:0;}
 .form-set dd .form-row .text{width:238px; border:1px solid #ccc; color:#888;font-size:100%;font-family:inherit;height:20px;line-height:20px;padding:5px;margin:0 10px 0 0;}
-.form-set dd .form-row label{padding:0 30px 0 0}
+.form-set dd .form-row label{padding:0 10px 0 0}
 .form-set dd .form-row label.mt-no{margin:0;}
 .form-set dd .form-row .s-textarea, .form-set dd .form-row .s-textarea-focus{width:388px;height:60px; line-height:20px;overflow-y:auto;float:left;margin:0 10px 0 0;border:#ccc 1px solid;padding:5px;font-size:100%;font-family:inherit;}
 .form-set dd .form-row select{height:30px; line-height:30px; outline:none; border:1px solid #ccc; font-family:inherit}
