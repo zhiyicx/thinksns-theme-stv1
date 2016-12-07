@@ -377,15 +377,21 @@ core.weibo = {
 		var app_name = attrs.app_name;
 		var channel = attrs.channel;
 		if(obj.checkNums(textarea,'post') == false) {
-			if(type == 'postimage') {
-				textarea.value = L('PUBLIC_SHARE_IMAGES');
-			} else if(type == 'postvideo') {
-				textarea.value = L('分享视频');
-			} else if(type == 'postfile') {
-				textarea.value = L('PUBLIC_SHARE_FILES');
+			if (textarea.value == 'undefined' || textarea.value == '' || textarea.value == null) {
+				if(type == 'postimage') {
+					textarea.value = L('PUBLIC_SHARE_IMAGES');
+				} else if(type == 'postvideo') {
+					textarea.value = L('分享视频');
+				} else if(type == 'postfile') {
+					textarea.value = L('PUBLIC_SHARE_FILES');
+				} else {
+					flashTextarea(textarea);
+					obj.isposting = false;
+					return false;
+				}
 			} else {
-				flashTextarea(textarea);
 				obj.isposting = false;
+				ui.error( '字数超了' );
 				return false;
 			}
 		}
