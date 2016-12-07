@@ -40,6 +40,10 @@ core.multimage = {
 	 */
 	createDiv: function () {
 		var _this = this;
+		if ($('#attach_ids').val() != 'undefined' && $('#attach_ids').val() != '' && $('#attach_ids').val() != null && $('.weibo-file-list').html() != '' && $('.weibo-file-list').html() != 'undefined' && $('.weibo-file-list').html() != null) {
+			ui.error( '不能同时发布图片和附件' )
+			return false;
+		}
 		$('.attach-file').remove();
 		this.unid = 0;
 		// 异步获取弹窗结构
