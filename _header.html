@@ -4,7 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title><neq name= '_title' value=''>{$_title} - {$site.site_name}<else />{$site.site_name} - {$site.site_slogan}</neq></title>
 <meta content="<neq name= '_keywords' value=''>{$_keywords}<else />{$site.site_header_keywords}</neq>" name="keywords">
-<meta content="<neq name= '_description' value=''>{$_description}<else />{$site.site_header_description}</neq>" name="description">
+<?php if (isset($_description)) { ?>
+<meta content="<?php echo $_description; ?>" name="description">
+<?php } elseif(isset($site['site_header_keywords'])) { ?>
+<meta content="<?php echo $site['site_header_keywords']; ?>" name="description">
+<?php } ?>
 <meta property="qc:admins" content="345471037076401633636375" />
 {:Addons::hook('public_meta')}
 <link href="favicon.ico?v={$site.sys_version}" type="image/x-icon" rel="shortcut icon">
@@ -28,7 +32,7 @@ var MID		  = '<php> echo $mid;</php>';
 var UID		  = '<php> echo $uid;</php>';
 var initNums  =  '<php> echo $initNums;</php>';
 var SYS_VERSION = '<php> echo $site["sys_version"];</php>';
-var UMEDITOR_HOME_URL = '<?php echo __THEME__."/js/um/"; ?>';
+var UMEDITOR_HOME_URL = '__THEME__/js/um/';
 var _CP       = '{:C("COOKIE_PREFIX")}';
 // Js语言变量
 var LANG = new Array();

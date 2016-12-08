@@ -7,7 +7,8 @@
 <div id="body-bg">
 <php>$act = strtolower(APP_NAME).'_'.strtolower(MODULE_NAME); $navClass[$act]='current';$aClass[$act]='app';</php>
 <php>$act = strtolower(APP_NAME); $navClass[$act]='current';$aClass[$act]='app';</php>
-<div id="header" name="header"> {* 未登录时 *}
+<div id="header" name="header">
+  <!-- 未登录时 -->
   <nosession name="mid">
     <div class="header-wrap">
       <div class="head-bd"> 
@@ -26,7 +27,7 @@
       </div>
     </div>
   </nosession>
-  {* 登录后 *}
+  <!-- 登录后 -->
   <session name="mid">
     <div class="header-wrap">
       <div class="head-bd"> 
