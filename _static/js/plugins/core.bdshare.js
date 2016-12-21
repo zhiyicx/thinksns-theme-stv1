@@ -55,7 +55,7 @@ core.bdshare = {
 						var target = window.event.srcElement;
 					}
 					var dd = $(target).parents('dd');
-					var content = dd.find('.contents:first').clone();
+					var content = dd.find('.contents:first p').clone();
 					content.find('dl').remove();
 					content = $.trim(content.text());
 					var url = dd.find('p.info a.date').attr('href');
