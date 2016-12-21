@@ -1264,7 +1264,7 @@ a.top_stick:hover{background-position:-60px 0;text-decoration:none}
 .right-box .take_part_in_user li .user img{width:30px; height:30px; border-radius:50%;}
 .right-box .take_part_in_user li .user-prof{ height:30px; line-height:30px; overflow:hidden; padding:0 0 0 10px;width:200px}
 /**微吧达人**/
-.user-list-rec li{display: block;float: left;margin: 0 20px 20px 0;padding: 0;position: relative; text-align:center;}
+.user-list-rec li{display: block;float: left;margin: 0 20px 64px 0;padding: 0;position: relative; text-align:center;}
 /*分享配图*/
 .weiboPic dt,.weiboPic dt img{width:240px;height:240px;}
 .weiboPic dd,.weiboPic dd img{width:111px;height:111px;}
