@@ -1727,7 +1727,7 @@ scrollbar-base-color:#A8A8A8;
 .quike-login li .input-box .f14{font-size:14px;line-height:30px;}
 .quike-login li.mb{padding:1px 1px 8px 0;}
 .quike-login .quike-reg{font-size:14px;}
-.ico-qq,.ico-renren,.ico-sina,.ico-qzone,.ico-douban,.ico-taobao,.ico-baidu{background: url(../image/ico-account.png) no-repeat;display:inline-block;cursor:pointer;_background:url(../image/ico-account.gif) no-repeat;width:27px;height:27px;}
+.ico-qq,.ico-renren,.ico-sina,.ico-qzone,.ico-douban,.ico-taobao,.ico-baidu,.ico-weixin_{background: url(../image/ico-account.png) no-repeat;display:inline-block;cursor:pointer;_background:url(../image/ico-account.gif) no-repeat;width:27px;height:27px;}
 .ico-qzone{background-position:-108px -48px;margin-right:18px;}
 a.ico-qzone:hover{background-position:-166px -48px;}
 
@@ -1748,6 +1748,10 @@ a.ico-taobao:hover{background-position:-166px -192px;}
 
 .ico-baidu{background-position:-108px -144px;margin-right:18px;}
 a.ico-baidu:hover{background-position:-166px -144px;}
+
+.ico-weixin_{background-position:-350px 0;margin-right:18px;}
+/*.ico-weixin_{background-position:-223px 0;margin-right:18px;}*/
+/*a.ico-weixin_:hover{background-position:-273px 0;}*/
 
 /*url框*/
 .url{display:inline-block;position:relative;*float:left;}
