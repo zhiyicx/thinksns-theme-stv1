@@ -1749,9 +1749,8 @@ a.ico-taobao:hover{background-position:-166px -192px;}
 .ico-baidu{background-position:-108px -144px;margin-right:18px;}
 a.ico-baidu:hover{background-position:-166px -144px;}
 
-.ico-weixin_{background-position:-350px 0;margin-right:18px;}
-/*.ico-weixin_{background-position:-223px 0;margin-right:18px;}*/
-/*a.ico-weixin_:hover{background-position:-273px 0;}*/
+.ico-weixin_{background-position:-223px 0;margin-right:18px;}
+a.ico-weixin_:hover{background-position:-273px 0;}
 
 /*url框*/
 .url{display:inline-block;position:relative;*float:left;}
