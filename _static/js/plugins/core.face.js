@@ -40,7 +40,7 @@ core.face = {
 			$('#emotions').css({
 				top: height + 5 + 'px',
 				left: "-25px",
-				zIndex: 1002,
+				zIndex: 1001,
 				margin: '0 0 0 -5px'
 			});
 
@@ -74,5 +74,5 @@ core.face = {
 				}
 			}
 		    return false;
-		}		
+		}
 };

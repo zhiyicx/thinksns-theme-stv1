@@ -22,12 +22,16 @@ core.multimage = {
 	},
 	/**
 	 * 初始化操作执行
-	 * @param object obj 点击的DOM节点对象 
+	 * @param object obj 点击的DOM节点对象
 	 * @param object textarea 输入框DOM对象
 	 * @param object postbtn 发布按钮DOM对象
 	 * @return {[type]}          [description]
 	 */
 	init: function (obj, textarea, postbtn) {
+		var add_share = $('#multi_image')[0];
+		if("undefined" != typeof(add_share)){
+			return false;
+		}
 		this.obj = obj;
 		this.textarea = textarea;
 		this.postbtn = postbtn;
@@ -40,10 +44,6 @@ core.multimage = {
 	 */
 	createDiv: function () {
 		var _this = this;
-		if ($('#attach_ids').val() != 'undefined' && $('#attach_ids').val() != '' && $('#attach_ids').val() != null && $('.weibo-file-list').html() != '' && $('.weibo-file-list').html() != 'undefined' && $('.weibo-file-list').html() != null) {
-			ui.error( '不能同时发布图片和附件' )
-			return false;
-		}
 		$('.attach-file').remove();
 		this.unid = 0;
 		// 异步获取弹窗结构
@@ -51,14 +51,14 @@ core.multimage = {
 			if (res.status === 1) {
 				_this.unid = res.unid;
 				// 弹窗的HTML结构
-				var html = '<div class="talkPop alL share_adds" id="multi_image" style="*padding-top:20px;">\
+				var html = '<div class="talkPop alL share_adds" id="multi_image" style="*padding-top:20px;" event-node="uploadimg">\
 										<div class="wrap-layer">\
 										<div class="arrow arrow-t"></div>\
 										<div class="talkPop_box">\
-										<div class="close hd"><a onclick="core.multimage.removeDiv()" class="ico-close" href="javascript:;" title="'+L('PUBLIC_CLOSE')+'"></a>\
+										<div class="close hd"><a onclick="core.multimage.hasDispalyDiv(\'hide\')" class="ico-close" href="javascript:;" title="'+L('PUBLIC_CLOSE')+'"></a>\
 										<span>共&nbsp;<em id="upload_num_'+res.unid+'">0</em>&nbsp;张，还能上传&nbsp;<em id="total_num_'+res.unid+'">'+res.total+'</em>&nbsp;张（按住ctrl可选择多张）</span></div>'
-										+res.html+
-										'</div></div></div>';
+					+res.html+
+					'</div></div></div>';
 				// 插入到body底部
 				$('body').append(html);
 				$(_this.obj.parentModel).attr('unid', res.unid)
@@ -70,9 +70,15 @@ core.multimage = {
 		// body点击事件绑定
 		$('body').bind('click',function(event){
 			var obj = ('undefined' !== typeof event.srcElement) ? event.srcElement : event.target;
-			if ($(obj).attr('event-node') === 'insert_file') {
-				core.multimage.removeDiv();
+			if($(obj).hasClass('image-block')){
+				return false;
 			}
+			if($(obj).parents("div[event-node='uploadimg']").get(0) == undefined){
+				core.multimage.hasDispalyDiv('hide');
+			}
+			/*if ($(obj).attr('event-node') === 'insert_image') {
+			 core.multimage.removeDiv();
+			 }*/
 		});
 	},
 	/**
@@ -88,6 +94,14 @@ core.multimage = {
 			$('#attach_ids').remove();
 		}
 		return false;
+	},
+	hasDispalyDiv: function (obj) {
+		if (obj == 'hide') {
+			$('#multi_image').hide();
+		} else {
+			$('#multi_image').show();
+		}
+		
 	},
 	/**
 	 * 移除图片接口

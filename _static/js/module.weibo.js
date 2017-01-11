@@ -78,16 +78,40 @@ M.addEventFns({
 	},
 	insert_image: {		// 弹出插入图片框
 		click: function () {
+			if ($('#postvideourl').val() != 'undefined' && $('#postvideourl').val() != '' && $('#postvideourl').val() != null) {
+				ui.error( '不能同时发布图片、视频和附件' )
+				return false;
+			}
+			if ($('#attach_ids').val() != 'undefined' && $('#attach_ids').val() != '' && $('#attach_ids').val() != null && $('.weibo-file-list').html() != '' && $('.weibo-file-list').html() != 'undefined' && $('.weibo-file-list').html() != null) {
+				ui.error( '不能同时发布图片、视频和附件' )
+				return false;
+			}
 			var target = this.parentModel.parentModel.childModels['mini_editor'][0];
 			var postfeed = this.parentModel.childEvents[$(this).attr('rel')][0];
-			core.plugInit('multimage', this, $(target).find('textarea'), postfeed);
+			var n = $('#multi_image').length;
+			if (n) {
+				core.multimage.hasDispalyDiv();
+			}else{
+				core.plugInit('multimage', this, $(target).find('textarea'), postfeed);
+			}
+			
 		}
+		
 	},
 	insert_video: {	//弹出插入视频框
 		click: function(){
+			if ($('#attach_ids').val() != 'undefined' && $('#attach_ids').val() != '' && $('#attach_ids').val() != null) {
+				ui.error( '不能同时发布图片、视频和附件' )
+				return false;
+			}
 			var target = this.parentModel.parentModel.childModels["mini_editor"][0];
 			var postfeed = this.parentModel.childEvents[$(this).attr('rel')][0];
-			core.plugInit('video',this,$(target).find('textarea'),postfeed);
+			var n = $('#videos').length;
+			if (n) {
+				core.video.hasDispalyDiv();
+			} else {
+				core.plugInit('video',this,$(target).find('textarea'),postfeed);
+			}
 		}
 	},
 	feed_tab_btn: {

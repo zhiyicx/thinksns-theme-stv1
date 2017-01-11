@@ -76,7 +76,14 @@ core.uploadFile = {
 
 		},
 		createResultDiv:function(){
-			
+			if ($('#postvideourl').val() != 'undefined' && $('#postvideourl').val() != '' && $('#postvideourl').val() != null) {
+				ui.error( '不能同时发布图片、视频和附件' )
+				return false;
+			}
+			if ($('#attach_ids').val() != 'undefined' && $('#attach_ids').val() != '' && $('#attach_ids').val() != null) {
+				ui.error( '不能同时发布图片、视频和附件' )
+				return false;
+			}
 			this.resultDiv = document.createElement("div");
 			$(this.resultDiv).attr('uploadcontent',this.type);
 			$(this.resultDiv).addClass('input-content attach-file');
