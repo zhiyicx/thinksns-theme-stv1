@@ -160,7 +160,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr=
 /*#body_page{no-repeat center 0;min-height:980px;_background:url(../image/body-bg.gif) no-repeat center 0;}*/
 #body-bg{padding:85px 0 0 0;_padding:0;background:#f1f2f3;}
 #page-wrap #main-wrap{margin:0 auto;text-align: left;width:1000px;position:relative;_margin:20px auto 0;}
-#page-wrap #top-wrap{margin:0 auto 20px auto;text-align: left;width:1000px;}
+#page-wrap #top-wrap{margin:0 auto 20px auto;text-align: left;width:1000px;overflow: hidden;}
 #st-index-grid{zoom:1}
 #st-search-grid{margin:0 0 10px}
 #main-wrap .page-content:after{clear: both;content: ".";display: block;height: 0;visibility: hidden}
