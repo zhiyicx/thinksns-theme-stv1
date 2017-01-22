@@ -321,7 +321,7 @@ core.weibo = {
 			if (full) {
 				html = L('PUBLIC_INPUT_ERROR_TIPES', {'sum':'<span style="color:red">' + Math.abs(leftNums) + '</span>'});
 			} else {
-				html = '<span style="color:red">' + Math.abs(leftNums) + '</span>';
+				html = '<span style="color:red">-' + Math.abs(leftNums) + '</span>';
 			}
 			$(obj).addClass('fb');
 			$numsLeft[0].innerHTML = html;
