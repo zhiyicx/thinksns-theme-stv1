@@ -509,7 +509,7 @@ a:hover .contribute{background-position:0 -207px;}
 .feed-share .repeat{margin:0}
 .main-right .feed-share .repeat .input textarea{width:686px;height:60px;margin:10px 0 0}
 
-.mod-feed-tab{overflow: hidden;*zoom:1;}
+.mod-feed-tab{overflow: hidden;*zoom:1; margin-left:-15px;}
 .mod-feed-tab .inner-feed-nav{float:left;}
 .mod-feed-tab .inner-feed-nav li{float: left;}
 .mod-feed-tab .inner-feed-nav li a,.mod-feed-tab .inner-feed-nav li a:hover{display:inline-block;height:14px;line-height:14px;white-space:nowrap;word-break:break-all;_float:left;padding:15px;}
