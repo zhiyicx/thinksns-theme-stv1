@@ -326,10 +326,11 @@
     </script> 
   </session>
 </div>
+
 <!-- 首页顶部广告图位置 -->
 <session name="mid">
-  <div style="text-align: center;margin-bottom: 20px;">
-    <img src="__THEME__/image/img_decoration.png">
+  <div style="width: 1000px;margin: auto">
+    {:Addons::hook('show_ad_space', array('place'=>'home_weibo_top'))}
   </div>
 </session>
 <!--二级导航-->
@@ -364,8 +365,8 @@
   </div>
   <!-- 首页顶部广告图位置 -->
   <nosession name="mid">
-    <div style="text-align: center;margin-top: 20px;">
-      <img src="__THEME__/image/img_decoration.png">
+    <div style="width: 1000px;margin: auto;margin-top: 20px;">
+      {:Addons::hook('show_ad_space', array('place'=>'home_weibo_top'))}
     </div>
   </nosession>
 </div>
