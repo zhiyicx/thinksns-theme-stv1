@@ -78,6 +78,7 @@ M.addEventFns({
 	},
 	insert_image: {		// 弹出插入图片框
 		click: function () {
+			$('#emotions').remove();
 			if ($('#postvideourl').val() != 'undefined' && $('#postvideourl').val() != '' && $('#postvideourl').val() != null) {
 				ui.error( '不能同时发布图片、视频和附件' )
 				return false;
@@ -100,6 +101,7 @@ M.addEventFns({
 	},
 	insert_video: {	//弹出插入视频框
 		click: function(){
+			$('#emotions').remove();
 			if ($('#attach_ids').val() != 'undefined' && $('#attach_ids').val() != '' && $('#attach_ids').val() != null) {
 				ui.error( '不能同时发布图片、视频和附件' )
 				return false;
