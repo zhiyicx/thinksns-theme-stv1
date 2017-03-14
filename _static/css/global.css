@@ -2447,3 +2447,6 @@ border-bottom-left-radius: 12px;color: #666;border-bottom: 1px solid #FFF;paddin
         -webkit-transform: scale(0.5);
     }
 }
+
+/*置顶微博图片不显示*/
+.feed_top img{display: none}
