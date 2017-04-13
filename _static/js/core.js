@@ -411,6 +411,12 @@ var ui = {
 			ui.box.load( U('public/Passport/quickLogin') ,"快速登录",null,{url:url},'post');
 		}, '');
 	},
+    checkDownload: function(e){
+        var url = "undefined" == typeof(e) ? location.href : e;
+        setTimeout(function() {
+            ui.box.load( U('weiba/Index/checkDownload') ,"身份验证",null,{url:url},'get');
+        }, '');
+    },
 	/**
 	 * 确认弹框显示API - 浮窗型
 	 * @example
