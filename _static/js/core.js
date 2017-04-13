@@ -411,6 +411,7 @@ var ui = {
 			ui.box.load( U('public/Passport/quickLogin') ,"快速登录",null,{url:url},'post');
 		}, '');
 	},
+    //下载验证弹框
     checkDownload: function(e){
         var url = "undefined" == typeof(e) ? location.href : e;
         setTimeout(function() {
