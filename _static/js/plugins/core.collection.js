@@ -41,15 +41,23 @@ core.collection = {
 						if(isIco == 1) {
 							$(obj).find('i').eq(0).addClass('current');
 						} else {
-							$(obj).html(L('PUBLIC_FAVORITED'));
+                            if (stable == 'question' && sapp == 'wenda') {
+                                $(obj).html('取消关注');
+                            } else {
+                                $(obj).html(L('PUBLIC_FAVORITED'));
+                            }
 						}
 						var nums = $('.count_' + stable + '_' + sid).html();
 						$('.count_' + stable + '_' + sid).html(parseInt(nums) + 1);
 					} else {
-						$(obj).html(L('PUBLIC_DEL_FAVORITE'));
+                        if (stable == 'question' && sapp == 'wenda') {
+                            $(obj).html('取消关注');
+                        } else {
+                            $(obj).html(L('PUBLIC_DEL_FAVORITE'));
+                        }
 					}
 					updateUserData('favorite_count', 1);
-					ui.success(L('PUBLIC_FAVORITE_SUCCESS'));
+					ui.success('操作成功');
 				}
 			}, 'json');
 			return false;
@@ -64,12 +72,17 @@ core.collection = {
 						if(isIco == 1) {
 							$(obj).find('i').eq(0).removeClass('current');
 						} else {
-							$(obj).html(L('PUBLIC_FAVORITE'));
+                            if (stable == 'question' && sapp == 'wenda') {
+                                $(obj).html('+ 关注问题');
+                            } else {
+                                $(obj).html(L('PUBLIC_FAVORITE'));
+                            }
 						}
 						if($('.count_'+stable+'_'+sid).length >0 ){
 							var nums = 	$('.count_'+stable+'_'+sid).html();
 							$('.count_'+stable+'_'+sid).html(parseInt(nums)-1);
 						}
+                        ui.success('操作成功');
 					}else{
 						$('#feed'+sid).fadeOut('slow');
 					}

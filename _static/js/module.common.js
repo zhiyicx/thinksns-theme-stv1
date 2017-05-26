@@ -416,6 +416,30 @@ M.addEventFns({
 			});
 		}
 	},
+    open_question_share:{
+        click : function(){
+            if(MID == 0){
+                ui.quicklogin();
+                return;
+            }
+            var _this = this;
+            core.plugFunc('bdshare', function(){
+                core.bdshare.sharequestion(_this);
+            });
+        }
+    },
+    open_answer_share:{
+        click : function(){
+            if(MID == 0){
+                ui.quicklogin();
+                return;
+            }
+            var _this = this;
+            core.plugFunc('bdshare', function(){
+                core.bdshare.shareAnswer(_this);
+            });
+        }
+    },
 	share:{//分享操作
 		click : function(){
 			var attrs = M.getEventArgs(this);

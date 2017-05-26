@@ -85,5 +85,97 @@ core.bdshare = {
 				line.hide();
 			});
 		}
-	}
+	},
+
+    sharequestionConfig: false,
+    sharequestion: function (obj){
+        if(!core.bdshare.sharequestionConfig){
+            core.bdshare.addConfig('share', {
+                "tag" : "share_question",
+                "onBeforeClick":function(cmd, config){
+                    if(window.event.target){
+                        var target = window.event.target;
+                    }else{
+                        var target = window.event.srcElement;
+                    }
+                    var div = $(target).closest('.send-question-box');
+                    var title = $.trim(div.find('h1').text());
+                    var content = div.find('p').text();
+                    var bdPic = '';
+                    if (div.find('img').length > 0) {
+                        bdPic = div.find('img')[0].src;
+                    }
+                    var url = dd.find('p.info a.date').attr('href');
+                    config["bdUrl"]  = url;
+                    config["bdText"] = title;
+                    config["bdDesc"] = '';
+                    config["bdPic"] = bdPic;
+                    config['bdComment'] = content;
+                    return config;
+                }
+            });
+            core.bdshare.sharequestionConfig = true;
+        }
+        //console.log($(obj).html());
+        var dd   = $(obj).closest('.send-question-box');
+        var line = dd.find('.infopen:first');
+        var box  = dd.find('.forward_box:first');
+        var cmt  = $(obj.parentModel.childModels['comment_detail'][0]);
+        if(cmt.size()) cmt.hide();
+        if(box.is(':hidden')){
+            line.show().find('.trigon').css('left',
+                $(obj).position().left+ ($(obj).width()/2));
+            box.stop().slideDown(200);
+        }else{
+            box.stop().slideUp(200, function(){
+                line.hide();
+            });
+        }
+    },
+    shareAnswerConfig: false,
+    shareAnswer: function (obj){
+        if(!core.bdshare.sharequestionConfig){
+            core.bdshare.addConfig('share', {
+                "tag" : "share_answer",
+                "onBeforeClick":function(cmd, config){
+                    if(window.event.target){
+                        var target = window.event.target;
+                    }else{
+                        var target = window.event.srcElement;
+                    }
+                    // var div = $(target).closest('.send-question-box');
+                    var title = $.trim($('h1').text());
+
+                    var dd = $(target).closest('dd');
+                    var content = $.trim(dd.find('.post-content').text());
+                    var bdPic = '';
+                    if (dd.find('img').length > 0) {
+                        bdPic = dd.find('img')[0].src;
+                    }
+                    var url = dd.find('p.info a.date').attr('href');
+                    config["bdUrl"]  = url;
+                    config["bdText"] = title;
+                    config["bdDesc"] = '';
+                    config["bdPic"] = bdPic;
+                    config['bdComment'] = content;
+                    return config;
+                }
+            });
+            core.bdshare.shareAnswerConfig = true;
+        }
+        var dd   = $(obj).parents('dd');
+        var line = dd.find('.infopen:first');
+        var box  = dd.find('.forward_box:first');
+        var cmt  = dd.find('comment_detail');//$(obj.parentModel.childModels['comment_detail'][0]);
+        if(cmt.size()) cmt.hide();
+        if(box.is(':hidden')){
+            line.show().find('.trigon').css('left',
+                $(obj).position().left+ ($(obj).width()/2));
+            box.stop().slideDown(200);
+        }else{
+            box.stop().slideUp(200, function(){
+                line.hide();
+            });
+        }
+    }
 };
