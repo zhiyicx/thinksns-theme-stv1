@@ -142,8 +142,9 @@ core.comment = {
 		var strlen = core.getLength(_textarea.value);
 		var leftnums = initNums - strlen;
 		if(leftnums < 0 || leftnums == initNums) {
-			flashTextarea(_textarea);
-			return false;
+            flashTextarea(_textarea);
+            ui.error('字数不能超过'+initNums+'字');
+            return false;
 		}
 		// 如果转发到自己的分享
 		if(this.canrepost == 1){

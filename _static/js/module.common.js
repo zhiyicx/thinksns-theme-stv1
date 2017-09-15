@@ -713,7 +713,7 @@ M.addEventFns({
 			attrs.to_uid = $(this).attr('to_uid');
 			attrs.to_comment_uname = $(this).attr('to_comment_uname');
 			attrs.addToEnd = $(this).attr('addtoend');
-			
+
 			var comment_list = this.parentModel.parentModel;
 			core.comment.init(attrs,comment_list);
 
