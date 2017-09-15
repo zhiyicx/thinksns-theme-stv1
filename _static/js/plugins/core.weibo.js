@@ -432,8 +432,10 @@ core.weibo = {
 					core.video.removeDiv();
 				}
 				var postOk = mini_editor.childModels['post_ok'][0];
-				// 提示语修改
-				if (channel_id != 0 && msg.is_audit_channel == 0) {
+                // 提示语修改
+				if (msg.is_audit == 0) {
+                    $(postOk).html('<i class="ico-ok"></i>内容含敏感词，待审核');
+				} else if (channel_id != 0 && msg.is_audit_channel == 0) {
 					$(postOk).html('<i class="ico-ok"></i>投稿正在审核中');
 				} else {
 					$(postOk).html('<i class="ico-ok"></i>发布成功');

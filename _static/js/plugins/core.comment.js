@@ -84,7 +84,7 @@ core.comment = {
 				commentListObj.innerHTML = '<img src="'+THEME_URL+'/image/load.gif" style="text-align:center;display:block;margin:0 auto;"/>';
 				$.post(U('widget/Comment/render'),{app_uid:this.app_uid,row_id:this.row_id,app_row_id:this.app_row_id,app_row_table:this.app_row_table,isAjax:1,showlist:0,
 						cancomment:this.cancomment,cancomment_old:this.cancomment_old,app_name:this.app_name,table:this.table,
-						canrepost:this.canrepost,tpl:this.tpl },function(html){
+                        canrepost:this.canrepost,tpl:this.tpl },function(html){
 							if(html.status =='0'){
 								commentListObj.style.display = 'none';
 								ui.error(html.data)

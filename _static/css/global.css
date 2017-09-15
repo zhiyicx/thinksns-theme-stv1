@@ -1709,7 +1709,7 @@ scrollbar-base-color:#A8A8A8;
 #login-status .login-ft-wrap{margin-top:30px;}
 .login-ft-wrap{width:100%;}
 .login-ft span{float:left;display:block;font-size:14px;font-family: "微软雅黑";color:#333;}
-.third-party dd{float:left;text-align:center;margin-left:40px;}
+.third-party dd{float:left;text-align:center;margin:auto;width:33%;}
 /*.third-party dd a{color:#999;display:inline-block;margin:0 14px 0 0;}*/
 .third-party a:hover{text-decoration:none;}
 .login-ft{*zoom:1; /*border-top:#d2d8e0 1px solid;*/position:relative;padding:20px 0;}
@@ -2449,4 +2449,4 @@ border-bottom-left-radius: 12px;color: #666;border-bottom: 1px solid #FFF;paddin
 }
 
 /*置顶微博图片不显示*/
-.feed_top img{display: none}
+/*.feed_top img{display: none}*/
