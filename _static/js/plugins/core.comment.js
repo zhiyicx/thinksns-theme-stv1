@@ -198,6 +198,15 @@ core.comment = {
 				//alert(msg);return false;
 				if(msg.status == "0"){
 					ui.error(msg.data);
+				}else if(msg.status == "1000"){
+                    //重置
+                    _textarea.value = '';
+                    _this.to_comment_id = 0;
+                    _this.to_uid = 0;
+                    if("function" == typeof(afterComment)){
+                        afterComment();
+                    }
+					ui.success(msg.data,3);
 				}else{
 					if("undefined" != typeof(commentListObj.childModels['comment_list']) ){
 						if(addToEnd == 1){

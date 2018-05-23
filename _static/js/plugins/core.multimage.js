@@ -110,7 +110,13 @@ core.multimage = {
 	 * @param integer attachId 附件ID
 	 * @return void
 	 */
-	removeImage: function (unid, index, attachId) {
+	removeImage: function (unid, index, attachId,e) {
+        e = e || window.event;
+        if(e.stopPropagation) { //W3C阻止冒泡方法
+            e.stopPropagation();
+        } else {
+            e.cancelBubble = true; //IE阻止冒泡方法
+        }
 		// 移除附件ID数据
 		core.multimage.upAttachVal('del', attachId);
 		// 移除图像

@@ -51,7 +51,7 @@ core.search.displayList = function(obj){
 		var html = '<div class="search-box" style="margin:0px 1px 0 -1px;" id="search-box"><dd id="s_1" class="current" onclick="core.search.dosearch(\'public\',2);" onmouseover="$(this).addClass(\'current\');" onmouseout="$(this).removeClass(\'current\');">搜“<span>'+this.searchKey+'</span>”相关分享&raquo;</dd>'
 					+'<dd id="s_2" onclick="core.search.dosearch(\'public\',1);" onmouseover="$(this).addClass(\'current\');" onmouseout="$(this).removeClass(\'current\');">搜“<span>'+this.searchKey+'</span>”相关人&raquo;</dd>'
 					+'<dd id="s_3" onclick="core.search.dosearch(\'public\',3);" onmouseover="$(this).addClass(\'current\');" onmouseout="$(this).removeClass(\'current\');">搜“<span>'+this.searchKey+'</span>”相关微吧&raquo;</dd>'
-					// +'<dd id="s_4" onclick="core.search.dosearch(\'public\',4);" onmouseover="$(this).addClass(\'current\');" onmouseout="$(this).removeClass(\'current\');">搜“<span>'+this.searchKey+'</span>”相关知识&raquo;</dd>'
+			        +'<dd id="s_4" onclick="core.search.dosearch(\'public\',4);" onmouseover="$(this).addClass(\'current\');" onmouseout="$(this).removeClass(\'current\');">搜“<span>'+this.searchKey+'</span>”相关资讯&raquo;</dd>'
 					+'<dd id="s_5" onclick="core.search.dosearch(\'public\',5);" onmouseover="$(this).addClass(\'current\');" onmouseout="$(this).removeClass(\'current\');">搜“<span>'+this.searchKey+'</span>”相关帖子&raquo;</dd>'
 					+'</div>';
 				//+'<dd class="more"><a href="#"" onclick="core.search.dosearch();">点击查看更多结果&raquo;</a></dd>';

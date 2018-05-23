@@ -386,7 +386,7 @@ a:hover .contribute{background-position:0 -207px;}
 .send_weibo .art .contents{width:626px;}
 .send_weibo .art select,.send_weibo .upload-box select{border:1px solid #ddd;width:180px;padding:4px 6px;margin:0 10px 0 0;font-size:14px;font-family:"微软雅黑";}
 .send_weibo .art select option{width:150px;}
-.send_weibo .action{margin:10px 0 0 0;}
+.send_weibo .action{margin:10px 0 10px;}
 .send_weibo .action .kind{*min-height:31px;}
 .send_weibo .input .num,.input_before .num,.input_before1 .num{position:absolute;bottom:5px;right:25px;font-size:14px;color:#999;font-weight:normal;font-family:"Georgia";}
 .send_weibo .title .num span{ font-family: Constantia,Georgia;font-size: 22px;font-weight: 700;margin: 0 5px;color:#004499;}

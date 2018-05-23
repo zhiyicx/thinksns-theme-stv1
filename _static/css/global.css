@@ -1285,7 +1285,7 @@ a.top_stick:hover{background-position:-60px 0;text-decoration:none}
 .profile-info-t dd.from{ }
 .profile-info-t dd.profile{color:#999;}
 .profile-info-t dd.profile a:hover{color:#0096e6;cursor: pointer;}
-.profile-info-t dd.cert_info{background:url(../image/usergroup_icon.png) no-repeat;height:23px;line-height:24px;padding:0 18px 0 36px;border-top-left-radius:12px;border-bottom-left-radius:12px;color:#666;border-bottom:1px solid #FFF;overflow:hidden}
+.profile-info-t dd.cert_info{background:url(../image/usergroup_icon.png) no-repeat;height:23px;line-height:24px;padding:0 18px 0 36px;border-top-left-radius:12px;border-bottom-left-radius:12px;color:#666;border-bottom:1px solid #FFF;overflow:hidden;background-position: 0 -19px;border-bottom-color: #EA340F;}
 .profile-info-t dd.v_01{background-position:0 -19px;border-bottom-color:#EA340F}
 .profile-info-t dd.v_02{background-position:0 -50px;border-bottom-color:#FFB11F}
 .profile-info-t dd.v_03{background-position:0 -82px;border-bottom-color:#4FAD66}
@@ -2326,6 +2326,8 @@ a:hover .ico-share-2{ background-position:-280px -236px;}
 .people-list-r .people-list-r-head .people-list-r-head-info dl dd.cert_info{background: url(../image/usergroup_icon.png) no-repeat;height: 23px;line-height: 24px;border-top-left-radius: 12px;
 border-bottom-left-radius: 12px;color: #666;border-bottom: 1px solid #FFF;padding: 0 18px 0 36px;overflow: hidden;}
 .people-list-r .people-list-r-head .people-list-r-head-info dl dd.v_01{background-position: 0 -19px;border-bottom-color: #EA340F;}
+.people-list-r .people-list-r-head .people-list-r-head-info dl dd.v_02{background-position: 0 -50px;border-bottom-color: #FFA600;}
+.people-list-r .people-list-r-head .people-list-r-head-info dl dd.v_03{background-position: 0 -82px;border-bottom-color: #4BB051;}
 
 .people-list-r .people-list-r-images{width:100%;float:left;padding-top:20px;}
 .people-list-r .people-list-r-images img{margin-right: 15px;}

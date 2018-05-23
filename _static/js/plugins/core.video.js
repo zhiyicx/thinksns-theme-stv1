@@ -34,10 +34,10 @@ core.video = {
 				tab += '<a id="tab_video_upload" href="javascript:void(0);" onclick="core.video.tab_video_upload()">自己上传</a>';
 				tab += '<a id="tab_video_online" href="javascript:void(0);" onclick="core.video.tab_video_online()" class="current left">互联网视频</a>';
 				upload_html += '<div id="video_upload" style="display:none;"><div class="video_txt">视频格式:'+res.video_ext+';文件大小:'+res.video_size+'M之内</div>'+res.html+'</div>';
-				online_html += '<div id="video_online"><div class="video_txt">请输入<a href="http://www.youku.com" target="_blank">优酷网</a>、<a href="http://www.tudou.com" target="_blank">土豆网</a>、<a href="http://www.yinyuetai.com/" target="_blank">音悦台</a>播放页的链接</div><div class="video-box" id="video_content"><input type="text" style="width: 320px;" id="videourl" class="s-txt left"/><input type="button" onclick="core.video.video_add();" value="添加" class="btn-add-video"/></div></div>';
+				online_html += '<div id="video_online"><div class="video_txt">请输入<a href="http://www.youku.com" target="_blank">优酷网</a>播放页的链接</div><div class="video-box" id="video_content"><input type="text" style="width: 320px;" id="videourl" class="s-txt left"/><input type="button" onclick="core.video.video_add();" value="添加" class="btn-add-video"/></div></div>';
 			}else{
 				tab += '互联网视频';
-				online_html += '<div id="video_online"><div class="video_txt">请输入<a href="http://www.youku.com" target="_blank">优酷网</a>、<a href="http://www.tudou.com" target="_blank">土豆网</a>、<a href="http://www.yinyuetai.com/" target="_blank">音悦台</a>播放页的链接</div><div class="video-box" id="video_content"><input type="text" style="width: 320px;" id="videourl" class="s-txt left"/><input type="button" onclick="core.video.video_add();" value="添加" class="btn-add-video"/></div></div>';
+				online_html += '<div id="video_online"><div class="video_txt">请输入<a href="http://www.youku.com" target="_blank">优酷网</a>播放页的链接</div><div class="video-box" id="video_content"><input type="text" style="width: 320px;" id="videourl" class="s-txt left"/><input type="button" onclick="core.video.video_add();" value="添加" class="btn-add-video"/></div></div>';
 			}
 			var html =  '<div class="talkPop alL share_adds" id="videos" style="*padding-top:20px;" event-node="uploadvideo">\
 									<div class="wrap-layer">\
