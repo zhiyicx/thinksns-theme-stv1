@@ -338,7 +338,9 @@ var ui = {
 		var _w = $('#ui_messageBox').width();
 		// 获取定位值
 		var left = ($('body').width() - _w)/2 ;
-		var top  = $(window).scrollTop() + ($(window).height()-_h)/2;
+		// var top  = $(window).scrollTop() + ($(window).height()-_h)/2;
+        var top  = window.parent.document.body.scrollTop + (window.screen.availHeight - 1) / 2;
+
 		// 添加弹窗样式与动画效果（出现）
 		$('#ui_messageBox').css({
 			left:left + "px",
@@ -794,8 +796,9 @@ var ui = {
 		center: function(axis) {
 			var v = ui.box._viewport();
 			var o =  [v.left, v.top];
+            var height = window.parent.document.body.scrollTop + (window.screen.availHeight - 1) / 2;
 			if (!axis || axis == 'x') this.centerAt(o[0] + v.width / 2 , null);
-			if (!axis || axis == 'y') this.centerAt(null, o[1] + v.height / 2);
+            if (!axis || axis == 'y') this.centerAt(null, o[1] + height);
 			return this;
 		},
 		/**
