@@ -434,31 +434,34 @@ core.weibo = {
 				var postOk = mini_editor.childModels['post_ok'][0];
                 // 提示语修改
 				if (msg.is_audit == 0) {
-                    $(postOk).html('<i class="ico-ok"></i>内容含敏感词，待审核');
+                    ui.success('分享内容含审核敏感词，需审核后展示',3);
+                    textarea.value = '';
+                    //$(postOk).html('<i class="ico-ok"></i>内容含敏感词，待审核');
 				} else if (channel_id != 0 && msg.is_audit_channel == 0) {
 					$(postOk).html('<i class="ico-ok"></i>投稿正在审核中');
+                    textarea.value = '';
 				} else {
 					$(postOk).html('<i class="ico-ok"></i>发布成功');
-				}
-				$(postOk).fadeIn('fast');
-				core.weibo.afterPost(mini_editor,textarea,attrs.topicHtml);	
-				if(!isbox) {
-					core.weibo.insertToList(msg.data, msg.feedId);
-				} else {
-					ui.box.close();
-					var mini = M.getModelArgs(mini_editor);
-					ui.success(mini.prompt);
-					if(document.getElementById('feed-lists') != null && channel_id == 0) {
-						setTimeout(function() {
-							core.weibo.insertToList(msg.data, msg.feedId);
-						}, 1500);	
+					$(postOk).fadeIn('fast');
+					core.weibo.afterPost(mini_editor,textarea,attrs.topicHtml);
+					if(!isbox) {
+						core.weibo.insertToList(msg.data, msg.feedId);
+					} else {
+						ui.box.close();
+						var mini = M.getModelArgs(mini_editor);
+						ui.success(mini.prompt);
+						if(document.getElementById('feed-lists') != null && channel_id == 0) {
+							setTimeout(function() {
+								core.weibo.insertToList(msg.data, msg.feedId);
+							}, 1500);
+						}
+						if (attrs.isrefresh == 1) {
+							setTimeout(function() {
+								location.reload();
+							}, 700);
+						}
 					}
-					if (attrs.isrefresh == 1) {
-						setTimeout(function() {
-							location.reload();
-						}, 700);
-					}
-				}
+                }
 				M.setArgs(_this,setargs);
 			} else {
 				ui.error(msg.data);
@@ -603,6 +606,16 @@ core.weibo = {
 			return sDate.getFullYear() + '-' + formatTime(sDate.getMonth() + 1) + '-' + formatTime(sDate.getDate()) + ' ' + formatTime(sDate.getHours()) + ':' + formatTime(sDate.getMinutes());
 		}
 	},
+    //阻止冒泡
+    preventBubbles: function (e,feedid,i) {
+        e = e || window.event;
+        if(e.stopPropagation) { //W3C阻止冒泡方法
+            e.stopPropagation();
+        } else {
+            e.cancelBubble = true; //IE阻止冒泡方法
+        }
+        core.weibo.showBigImage(feedid,i)
+    },
 	/**
 	 * 展示大图方法接口
 	 * @param integer feedId 分享ID
