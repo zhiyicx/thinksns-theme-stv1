@@ -72,7 +72,7 @@
                       <input type="hidden" name="a" value="public"/>
                       <dl>
                         <dt class="clearfix">
-                          <input id="search_input" class="s-txt left"  type="text" placeholder="搜人/分享/微吧/帖子" value="" event-node="searchKey" name='k'  autocomplete="off">
+                          <input id="search_input" class="s-txt left"  type="text" placeholder="搜人/分享/微吧/帖子/资讯" value="" event-node="searchKey" name='k'  autocomplete="off">
                         </dt>
                       </dl>
                     </form>
@@ -242,11 +242,11 @@
 
           //调整位置
           var l_left = _li.offset().left;
-
+          var liNum = Math.floor((_menu.find('li').length)/2)*60;
           //显示
           qcloud[ _nav + '_timer' ] = setTimeout(function(){
             if(_menu.has("ul").length){
-              _menu.find("ul").css("left",l_left+17);
+              _menu.find("ul").css("left",l_left+17-liNum);
               _menu.stop(true,true).fadeIn("fast");
               _li.find(".arrow-mes").fadeIn("fast");
             }

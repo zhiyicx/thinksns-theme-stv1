@@ -258,7 +258,7 @@
   <php>}else{</php>
   
   <volist name='listData.data' id='vo'>
-  <tr overstyle="on" id="tr<php>echo $vo[$_listpk];</php>">
+  <tr overstyle="on" id="tr<php>echo $vo[$_listpk];</php>" rel="<php>echo $vo[$_listpk];</php>">
   
   <php> if($allSelected):</php>
   <td><input type="checkbox" value="<php>echo $vo[$_listpk];</php>" onclick="admin.checkon(this)"  name="checkbox"></td>

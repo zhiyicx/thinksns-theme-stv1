@@ -108,7 +108,7 @@
       <dd>
     <php>endif; /*非隐藏域*/ </php>  
       	<php>if($keyType == 'text'):</php>
-      	<input name="{$pk}" id="form_{$pk}" type="text" value="{$defaultS|t}" <neq name='event' value='' > onfocus = "{$event}"</neq> class="s-txt" style='width:350px'>
+      	<input name="{$pk}" id="form_{$pk}" type="text" value="{$defaultS|t}" <neq name='event' value='' > onblur = "{$event}"</neq> class="s-txt" style='width:350px'>
       	<php>endif;</php>
         
         <php>if($keyType == 'password'):</php>
